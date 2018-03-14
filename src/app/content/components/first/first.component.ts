@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
-import { Post } from "../../models/post";
 import { HttpErrorResponse } from "@angular/common/http";
+
+import { Post } from "../../models/post";
 import { JsonPlaceholderService } from "../../services/json-placeholder/json-placeholder.service";
 import { PagerService } from "../../services/pager/pager.service";
 import { DataManipulationService } from "../../services/data-manipulation/data-manipulation.service";
@@ -12,12 +13,12 @@ import { DataManipulationService } from "../../services/data-manipulation/data-m
 })
 export class FirstComponent implements OnInit {
   @ViewChild("changePageSize") pageSize: ElementRef;
-  private posts: Array<Post>;
-  private displayedPosts: Array<Post>;
+  posts: Array<Post>;
+  displayedPosts: Array<Post>;
+  userIds: Array<Number>;
+  pager: any = {};
+  error: HttpErrorResponse;
   private filteredArray: Array<Post>;
-  private userIds: Array<Number>;
-  private pager: any = {};
-  private error: HttpErrorResponse;
 
   constructor(
     private jsonPlaceholderService: JsonPlaceholderService,
@@ -57,7 +58,7 @@ export class FirstComponent implements OnInit {
     this.pagerService.setPageSize(Number(this.pageSize.nativeElement.value));
     this.setPage(1);
   }
-  
+
   getUserIds() {
     this.userIds = Array.from(new Set(this.posts.map(item => item.userId)));
   }
@@ -76,9 +77,12 @@ export class FirstComponent implements OnInit {
 
   sortBy(value: string) {
     if (this.filteredArray) {
-      this.filteredArray= this.dataManipulationService.sortBy(value, this.filteredArray);
+      this.filteredArray = this.dataManipulationService.sortBy(
+        value,
+        this.filteredArray
+      );
     } else {
-      this.posts= this.dataManipulationService.sortBy(value, this.posts);
+      this.posts = this.dataManipulationService.sortBy(value, this.posts);
     }
     this.setPage(1);
   }

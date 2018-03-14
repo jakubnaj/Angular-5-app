@@ -1,12 +1,12 @@
 <ng-container *ngIf="!error;else errorHandler">
   <div class="row">
-      <div class="col-md-3 col-sm-12 mr-auto">
-          <label class="mr-sm-2" for="sortBy">Sort Id by</label>
-          <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="sortBy" (change)="sortBy($event.target.value)">
-            <option selected value="asc">Asc</option>
-            <option  value="desc">Desc</option>
-          </select>
-        </div>
+    <div class="col-md-3 col-sm-12 mr-auto">
+      <label class="mr-sm-2" for="sortBy">Sort Id by</label>
+      <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="sortBy" (change)="sortBy($event.target.value)">
+        <option selected value="asc">Asc</option>
+        <option value="desc">Desc</option>
+      </select>
+    </div>
     <div class="col-md-3 col-sm-12 ml-auto">
       <label class="mr-sm-2" for="userIds">Filter by UserId</label>
       <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="userIds" (change)="filterbyUser($event.target.value)">

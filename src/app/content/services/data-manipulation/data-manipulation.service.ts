@@ -23,13 +23,13 @@ export class DataManipulationService {
     }
   }
 
-  private sortAsc(arr: Array<Post>) {
+  private sortAsc(arr: Array<Post>): Array<Post> {
     return arr.sort((a, b) => {
       return a.id - b.id;
     });
   }
 
-  private sortDesc(arr: Array<Post>) {
+  private sortDesc(arr: Array<Post>): Array<Post> {
     return arr.sort((a, b) => {
       return b.id - a.id;
     });
