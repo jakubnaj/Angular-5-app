@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light jn-navigation mb-3 text-md-left text-center">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto ml-auto">
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="./first">FIRST</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="./second">SECOND</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="./third">THIRD</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="./fourth">FOURTH</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>

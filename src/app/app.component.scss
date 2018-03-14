@@ -1,0 +1,21 @@
+.jn-navigation {
+  .navbar-collapse {
+    font-size: 13px;
+  }
+  li.nav-item {
+    position: relative;
+  }
+  .active a::after {
+    border-bottom: 5px solid #00d290;
+    bottom: -10px;
+    content: " ";
+    left: 0;
+    position: absolute;
+    right: 0;
+  }
+  @media (max-width: 992px) {
+    .active a::after {
+      bottom: -2px;
+    }
+  }
+}
